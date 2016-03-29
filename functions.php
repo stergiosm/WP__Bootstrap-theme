@@ -1,8 +1,13 @@
 <?php
+
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+}
 function my_setup_theme() {
 	
 	register_sidebar( array(
-		'name'          => __( 'testbar', 'twentysixteen' ),
+		'name'          => __( 'test_bar', 'twentysixteen' ),
 		'id'            => 'sidebar-4',
 		'description'   => __( 'Add more widgets here to appear in your sidebar.', 'twentysixteen' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
